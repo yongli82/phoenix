@@ -1,0 +1,23 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "memo",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160729081325",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "author"
+}

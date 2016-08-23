@@ -1,0 +1,33 @@
+entity Author {
+    name String required,
+    memo String
+}
+
+entity Article {
+    title String required,
+    summary String,
+    content String,
+    publishDate ZonedDateTime,
+    updateDate ZonedDateTime
+}
+
+entity Comment {
+    content String,
+    publishDate ZonedDateTime,
+    updateDate ZonedDateTime
+}
+
+relationship ManyToOne {
+    Article{author} to Author
+}
+
+relationship ManyToOne {
+    Comment{article} to Article
+}
+
+relationship ManyToOne {
+    Comment{author} to Author
+}
+
+paginate Article with pagination
+

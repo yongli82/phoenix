@@ -1,0 +1,46 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "author",
+      "otherEntityName": "author",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "summary",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "publishDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "updateDate",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "changelogDate": "20160729081326",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "article"
+}

@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="phoenixApp.article.detail.title">Article</span> {{vm.article.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="phoenixApp.article.title">Title</span></dt>
+        <dd>
+            <span>{{vm.article.title}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.article.summary">Summary</span></dt>
+        <dd>
+            <span>{{vm.article.summary}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.article.content">Content</span></dt>
+        <dd>
+            <span>{{vm.article.content}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.article.publishDate">Publish Date</span></dt>
+        <dd>
+            <span>{{vm.article.publishDate | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.article.updateDate">Update Date</span></dt>
+        <dd>
+            <span>{{vm.article.updateDate | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.article.author">Author</span></dt>
+        <dd>
+            <a ui-sref="author-detail({id:vm.article.author.id})">{{vm.article.author.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

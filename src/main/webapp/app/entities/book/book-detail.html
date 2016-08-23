@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span translate="phoenixApp.book.detail.title">Book</span> {{vm.book.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="phoenixApp.book.name">Name</span></dt>
+        <dd>
+            <span>{{vm.book.name}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.book.memo">Memo</span></dt>
+        <dd>
+            <span>{{vm.book.memo}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.book.image">Image</span></dt>
+        <dd>
+            <span>{{vm.book.image}}</span>
+        </dd>
+        <dt><span translate="phoenixApp.book.created_by">Created By</span></dt>
+        <dd>
+            <span>{{vm.book.created_by}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

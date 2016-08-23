@@ -1,0 +1,22 @@
+entity Checklist {
+  name String required
+}
+
+entity Item {
+  name String required,
+  description String,
+  done Boolean,
+  dueDate LocalDate
+}
+
+relationship ManyToOne {
+  Checklist{user} to User
+}
+
+relationship OneToMany {
+  Checklist{item} to Item
+}
+
+paginate all with pagination
+service all with serviceClass
+

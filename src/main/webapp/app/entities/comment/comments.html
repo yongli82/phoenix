@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="phoenixApp.comment.home.title">Comments</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="comment.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="phoenixApp.comment.home.createLabel">
+                        Create new Comment
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="phoenixApp.comment.content">Content</span></th>
+                    <th><span translate="phoenixApp.comment.publishDate">Publish Date</span></th>
+                    <th><span translate="phoenixApp.comment.updateDate">Update Date</span></th>
+                    <th><span translate="phoenixApp.comment.article">Article</span></th>
+                    <th><span translate="phoenixApp.comment.author">Author</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="comment in vm.comments track by comment.id">
+                    <td><a ui-sref="comment-detail({id:comment.id})">{{comment.id}}</a></td>
+                    <td>{{comment.content}}</td>
+                    <td>{{comment.publishDate | date:'medium'}}</td>
+                    <td>{{comment.updateDate | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="article-detail({id:comment.article.id})">{{comment.article.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="author-detail({id:comment.author.id})">{{comment.author.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="comment-detail({id:comment.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="comment.edit({id:comment.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="comment.delete({id:comment.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
