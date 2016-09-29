@@ -65,11 +65,9 @@ task testReport(type: TestReport) {
 
 idea {
     module {
-        //if you love browsing Javadoc
-        downloadJavadoc = true
+        downloadJavadoc = false
 
-        //and hate reading sources :)
-        downloadSources = false
+        downloadSources = true
     }
 }
 
@@ -178,6 +176,13 @@ dependencies {
     compile("io.springfox:springfox-swagger2:${springfox_version}"){
         exclude module: 'mapstruct'
     }
+
+    compile 'com.qiniu:qiniu-java-sdk:7.0.+'
+    compile "org.apache.poi:poi:3.9"
+    compile "org.apache.poi:poi-ooxml:3.9"
+    compile "org.apache.poi:poi-scratchpad:3.9"
+    compile "com.fatboyindustrial.gson-javatime-serialisers:gson-javatime-serialisers:1.1.1"
+    compile "org.freemarker:freemarker:2.3.14"
 
     compile "mysql:mysql-connector-java"
     compile "com.h2database:h2"

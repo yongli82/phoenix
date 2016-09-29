@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head lang="en">
+
+<title>Phoenix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Jetzt abnehmen und glücklich werden. Mit dem RCM Programm gesund werden.Auch du kannst es schaffen." layout:fragment="meta-desc"/>
+<meta name="keywords" content="RCM, Abnehmen, Zucker, Fructose, Schlank, Glücklich, Erhnährungsplan, Gewichtstagebuch" layout:fragment="meta-keywords" />
+<link href="../../css/boostrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+<link href="../../css/layout.css" th:href="@{/css/layout.css}"
+	rel="stylesheet" media="screen" />
+
+<!--      Lets do something crazy, lets try to create a template without javascript in 2016!!!!!1111elf!!! -->
+<!--     <script th:src="@{/js/bootstrap.min.js}"></script> -->
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">RCM - Abnehmen und Glücklich sein</a>
+			</div>
+
+
+			<div sec:authorize="!isAnonymous()" class="pull-right">
+				<nav>
+
+					<ul>
+						<li><a href="/">Menu</a>
+							<ul>
+								<li><a th:href="@{/user/edit/0}">Profil</a></li>
+								<li><a th:href="@{/logout}">Log out</a></li>
+							</ul></li>
+					</ul>
+				</nav>
+
+			</div>
+
+			<div sec:authorize="isAnonymous()">
+				<div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right" th:action="@{/login}"
+						method="post">
+						<div class="form-group">
+							<input type="text" placeholder="Username" class="form-control"
+								name="username"></input>
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Password" name="password"
+								class="form-control"></input>
+						</div>
+						<button type="submit" class="btn btn-success">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container" layout:fragment="container">
+		<div class="page-header">
+			<h1>Sticky footer with fixed navbar</h1>
+		</div>
+		<p class="lead">
+			Pin a fixed-height footer to the bottom of the viewport in desktop
+			browsers with this custom HTML and CSS. A fixed navbar has been added
+			with
+			<code>padding-top: 60px;</code>
+			on the
+			<code>body &gt; .container</code>
+			.
+		</p>
+		<p>
+			Back to <a href="../sticky-footer">the default sticky footer</a>
+			minus the navbar.
+		</p>
+	</div>
+
+
+
+
+	<footer class="footer">
+		<div class="container">
+			<a href="/about">About</a>
+			<a href="/dataprivacypolicy">Data Privacy Policy</a>
+		</div>
+	</footer>
+
+</body>
+</html>

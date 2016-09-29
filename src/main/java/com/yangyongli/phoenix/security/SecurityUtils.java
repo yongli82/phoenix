@@ -1,11 +1,13 @@
 package com.yangyongli.phoenix.security;
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
 
@@ -74,4 +76,5 @@ public final class SecurityUtils {
         }
         return false;
     }
+
 }
